@@ -1,29 +1,43 @@
 import vk
 
 
-APP_ID = -1  # чтобы получить app_id, нужно зарегистрировать своё приложение на https://vk.com/dev
+APP_ID = 5571082
 
 
 def get_user_login():
-    pass
+    return input("Введите логин  ---  ")
 
 
 def get_user_password():
-    pass
+    return input("Введите пароль ---  ")
 
 
 def get_online_friends(login, password):
+    """Производит авторизацию пользователя вк. Возвращает None
+    в случае, если друзей онлайн нет. Возвращает список словарей,
+    содержащих информацию о друзьях онлайн."""
+
     session = vk.AuthSession(
         app_id=APP_ID,
         user_login=login,
         user_password=password,
     )
     api = vk.API(session)
-    # например, api.friends.get()
+    online_friends_id = api.friends.getOnline()
+    if not online_friends_id:
+        return None
+    else:
+        friends_online = api.users.get(user_ids=online_friends_id)
+        return friends_online
 
 
 def output_friends_to_console(friends_online):
-    pass
+    if friends_online is None:
+        print("\nСейчас у Вас нет друзей онлайн!")
+    else:
+        print("\nСреди ваших друзей сейчас онлайн:\n")
+        for friend in friends_online:
+            print(friend['first_name'], friend['last_name'])
 
 if __name__ == '__main__':
     login = get_user_login()
