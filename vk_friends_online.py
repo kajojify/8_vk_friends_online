@@ -35,7 +35,7 @@ def output_friends_to_console(friends_online):
     if friends_online is None:
         print("\nСейчас у Вас нет друзей онлайн!")
     else:
-        print("\nСреди ваших друзей сейчас онлайн:\n")
+        print("\nВаши друзья онлайн:\n")
         for friend in friends_online:
             print(friend['first_name'], friend['last_name'])
 
