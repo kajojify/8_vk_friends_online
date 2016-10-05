@@ -42,5 +42,10 @@ def output_friends_to_console(friends_online):
 if __name__ == '__main__':
     login = get_user_login()
     password = get_user_password()
-    friends_online = get_online_friends(login, password)
+    try:
+        friends_online = get_online_friends(login, password)
+    except vk.exceptions.VkAuthError:
+        print("Неправильный пароль или логин! Завершение программы.")
+        exit()
     output_friends_to_console(friends_online)
+    
