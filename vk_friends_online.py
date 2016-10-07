@@ -1,6 +1,5 @@
 import vk
-import os
-import sys
+from getpass import getpass
 
 
 APP_ID = 5571082
@@ -11,7 +10,7 @@ def get_user_login():
 
 
 def get_user_password():
-    return input("Введите пароль ---  ")
+    return getpass("Введите пароль ---  ")
 
 
 def get_online_friends(login, password):
@@ -34,10 +33,6 @@ def get_online_friends(login, password):
 
 
 def output_friends_to_console(friends_online):
-    if sys.platform == 'win32':
-        os.system("cls")
-    else:
-        os.system("clear")
     if friends_online is None:
         print("\nСейчас у Вас нет друзей онлайн!")
     else:
