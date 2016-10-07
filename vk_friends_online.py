@@ -14,10 +14,6 @@ def get_user_password():
 
 
 def get_online_friends(login, password):
-    """Производит авторизацию пользователя вк. Возвращает None
-    в случае, если друзей онлайн нет. Возвращает список словарей,
-    содержащих информацию о друзьях онлайн."""
-
     session = vk.AuthSession(
         app_id=APP_ID,
         user_login=login,
