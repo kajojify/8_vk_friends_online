@@ -1,4 +1,6 @@
 import vk
+import os
+import sys
 
 
 APP_ID = 5571082
@@ -32,6 +34,10 @@ def get_online_friends(login, password):
 
 
 def output_friends_to_console(friends_online):
+    if sys.platform == 'win32':
+        os.system("cls")
+    else:
+        os.system("clear")
     if friends_online is None:
         print("\nСейчас у Вас нет друзей онлайн!")
     else:
@@ -48,4 +54,3 @@ if __name__ == '__main__':
         print("Неправильный пароль или логин! Завершение программы.")
         exit()
     output_friends_to_console(friends_online)
-    
