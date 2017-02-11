@@ -1,5 +1,32 @@
-# 8_vk_friends_online
+8_vk_friends_online
+===================
 
-Скрипт vk_friends_online.py выводит в консоль имена и фамилии всех друзей онлайн для данного авторизированного пользователя.  
+The script vk_friends_online.py outputs surnames and names of your online friends on vk.com.
 
-Запуск скрипта производится следующим образом: 1) Открыть терминал. 2) Перейти в папку, содержащую скрипт vk_friends_online.py и текстовый файл requirements.txt. 3) Выполнить команду pip install -r requirements.txt для установки необходимых пакетов python. При выполнении команды могут понадобиться права root. 4) Выполнить команду python vk_friends_online.py. Если при выполнении программы произошла ошибка - попробуйте выполнить команду python3 vk_friends_online.py.
+How to run
+---------- 
+
+Clone this repository. Then go to the repository directory.
+
+Run the script vk_friends_online.py:
+
+```
+python3 vk_friends_online.py
+```
+
+Usage
+-----
+
+```
+~$ python3 vk_friends_online.py
+Введите логин  ---  +380971234567
+Введите пароль ---  
+
+Ваши друзья онлайн:
+
+Рома Приходько
+Тоха Артемьев
+Анастасия Крылова
+Виталий Бурченко
+Аня Коврова
+```
